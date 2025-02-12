@@ -109,44 +109,6 @@ switch (localStorage.getItem("language")) {
 
 }
 
-switch (localStorage.getItem("theme")) {
-
-    case "dark":
-
-        if (languageText.innerText == "EN") {
-
-            logo.src = "Assets/Images/logo_dark_ar.svg";
-
-        } else {
-
-            logo.src = "Assets/Images/logo.svg";
-
-        }
-
-        break;
-
-    case "light":
-
-        theme.classList.remove("fa-sun");
-
-        theme.classList.add("fa-moon");
-
-        links[1].href = "CSS/style_light.css";
-
-        if (languageText.innerText == "EN") {
-
-            logo.src = "Assets/Images/logo_light_ar.svg";
-
-        } else {
-
-            logo.src = "Assets/Images/logo_light.svg";
-
-        }
-
-        break;
-
-}
-
 /* Checking */
 
 function typeWriterEffect() {
@@ -222,50 +184,6 @@ language.addEventListener("click", () => {
             languageText.innerText = "EN";
 
             window.localStorage.setItem("language", "AR");
-
-            location.reload();
-
-        }
-
-    }
-
-);
-
-theme.addEventListener("click", () => {
-
-    switch (window.localStorage.getItem("theme")) {
-
-        case "dark":
-
-            theme.classList.remove("fa-sun");
-
-            theme.classList.add("fa-moon");
-
-            window.localStorage.setItem("theme", "light");
-
-            location.reload();
-
-            break;
-
-        case "light":
-
-            theme.classList.remove("fa-moon");
-
-            theme.classList.add("fa-sun");
-
-            window.localStorage.setItem("theme", "dark");
-
-            location.reload();
-
-            break;
-
-        default:
-
-            window.localStorage.setItem("theme", "light");
-
-            theme.classList.remove("fa-sun");
-
-            theme.classList.add("fa-moon");
 
             location.reload();
 
